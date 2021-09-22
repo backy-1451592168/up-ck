@@ -1,0 +1,48 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+    	"path": "pages/login/login",
+    	"style": {
+    		"navigationBarTitleText": "欢迎登录"
+    	}
+    },
+    {
+			"path": "pages/cockpit/cockpit",
+			"style": {
+				"navigationBarTitleText": "驾驶舱"
+			}
+		},
+    {
+			"path": "pages/plan/plan",
+			"style": {
+				"navigationBarTitleText": "计划管理"
+			}
+		}
+	],
+	"tabBar": {
+		"color": "#D9D9D9",
+		// 选中颜色
+		"selectedColor": "#ffd400",
+		"borderStyle": "white",
+		"backgroundColor": "#FFFFFF",
+		"list": [{
+				"pagePath": "pages/cockpit/cockpit",
+				// 未选择
+				"iconPath": "static/icons/bj_hui.png",
+				"selectedIconPath": "static/icons/bj.png",
+				"text": "编辑"
+		},{
+				"pagePath": "pages/plan/plan",
+				"iconPath": "static/icons/zzt_hui.png",
+				"selectedIconPath": "static/icons/zzt.png",
+				"text": "访客量"
+		}]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#F8F8F8",
+		"titleNView": false
+	}
+}
