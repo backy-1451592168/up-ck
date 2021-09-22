@@ -4,7 +4,7 @@
     <!-- <image class="logo" src="../../static/cn-logp.png" mode="aspectFit"></image> -->
     <form class="login-wrap" @submit="login">
       <!-- {{'  '}}  占位符 -->
-      <view class="title"><text class="log_font">登录{{'  '}}</text>CHECKYYan</view>
+      <view class="title">登录{{'  '}}<text class="log_font">CHECKYYan</text></view>
       <!-- <view class="title sub-title"></view> -->
       <view class="input-wrap" :class="nameStatus ? 'name_satus' : ''">
         <uni-icons type="person" size="20" color="#bebebe"></uni-icons>
@@ -15,7 +15,7 @@
         <uni-icons type="locked" size="20" color="#bebebe"></uni-icons>
         <input type="text" name="password" placeholder="请输入密码" placeholder-style="color: #bebebe;" :password="!showPw" confirm-type="next" v-model="pwd" @focus="loginFailed=false">
         <text style="color: #ff0303;" v-if="pawStatus">请输入密码！</text>
-        <uni-icons :type="showPw ? 'eye-slash' : 'eye'" size="20" color="#bebebe" @click="switchPwState"></uni-icons>
+        <uni-icons :type="showPw ? 'eye-slash' : 'eye'" size="20" :color=" showPw ? '#242a31' : '#bebebe'" @click="switchPwState"></uni-icons>
       </view>
       <view class="msg-wrap" v-show="loginFailed">
         <view class="msg-text">
@@ -28,7 +28,7 @@
           <checkbox color="#ffb40b" :checked="rememberPw" /><text>记住密码</text>
         </label>
       </checkbox-group>
-      <button class="btn" type="primary" form-type="submit">登录</button>
+      <button class="btn" type="primary" form-type="submit"><uni-icons type="arrowthinright" color="#ffffff" size="40"></uni-icons></button>
     </form>
     <!-- copyright -->
     <view class="copyright">
@@ -138,13 +138,13 @@ import uniIcons from '@/components/uni-icons/uni-icons.vue'
   }
   .login-wrap {
     width: 600rpx;
-    padding-top: 20vh;
+    padding-top: 15vh;
     background-color: #fff;
     border-radius: 6px;
     // box-shadow: 0 0 6px 0 #ccc;
 
     .log_font {
-      font-size: 28px;
+      font-size: 60rpx;
       font-weight: 600;
     }
     .title {
@@ -161,13 +161,13 @@ import uniIcons from '@/components/uni-icons/uni-icons.vue'
       margin-bottom: 80rpx
     }
     .input-wrap {
-      height: 92rpx;
+      height: 96rpx;
       line-height: 92rpx;
-      margin: 40rpx 0;
+      margin: 52rpx 0;
       padding: 0 32rpx;
       display: flex;
       align-items: center;
-      border: 1px solid #dcdcdc;
+      border: 1px solid #d2d0d0;
       border-radius: 13px;
       // background: #f4f4f4;
       input {
@@ -194,9 +194,18 @@ import uniIcons from '@/components/uni-icons/uni-icons.vue'
     }
     .checkbox {
       border: none;
+	  margin: 10rpx 0;
+	  height: 60rpx;
     }
     .btn {
       background-color: #494949;
+	  height: 90px;
+	  width: 90px;
+	  border-radius: 50px;
+	  line-height: 90px;
+	  margin-top: 40rpx;
+	  font-size: 48rpx;
+	  font-weight: 500;
     }
   }
   .copyright {
