@@ -40,8 +40,8 @@ export default {
 		this.rawMaterialConsumptionOpts = {
       enableScroll: true,
       xAxis: {
-        itemCount: 6, // 柱子间隙密度
-        labelCount: 3 // x轴刻度间隙密度
+        itemCount: 7, // 柱子间隙密度
+        labelCount: 2 // x轴刻度间隙密度
       },
       yAxis: {
         showTitle: true,
@@ -107,7 +107,12 @@ export default {
 		},
 		async getPrecessParam () {
 			// 实时数据
-			const data = await this.$api.getUserValue({startingTime: this.startDate, endTime: this.endDate})
+      uni.showLoading({
+        title: '加载中'
+      })
+			const data = await this.$api.getUserValue({startingTime: this.startDate, endTime: this.endDate}).finally(_ => {
+        uni.hideLoading()
+      })
 			this.chartData.categories = data.dataList.map(item => item.date)
 			this.chartData.series[0].data = data.dataList.map(item => item.value)
 		},

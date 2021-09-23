@@ -7,7 +7,8 @@
       <view class="title">登录{{'  '}}<text class="log_font">CHECKYYan</text></view>
       <!-- <view class="title sub-title"></view> -->
       <view class="input-wrap" :class="nameStatus ? 'name_satus' : ''">
-        <uni-icons type="person" size="20" color="#bebebe"></uni-icons>
+        <uni-icons type="person" size="20" color="#bebebe" v-if="!username"></uni-icons>
+				<image class="avatar-style" src="../../static/yan.jpg" v-else></image>
         <input type="text" name="username" placeholder="请输入用户名" placeholder-style="color: #bebebe;" confirm-type="next" v-model="username" @focus="loginFailed=false">
         <text style="color: #ff0303;" v-if="nameStatus">请输入账号！</text>
       </view>
@@ -32,7 +33,7 @@
     </form>
     <!-- copyright -->
     <view class="copyright">
-      All Copyright Reserved by CHECKYAN @ 2021.
+      手机号码登录 | 找回密码 | 新用户注册
     </view>
 	</view>
 </template>
@@ -168,13 +169,18 @@ import uniIcons from '@/components/uni-icons/uni-icons.vue'
       display: flex;
       align-items: center;
       border: 1px solid #d2d0d0;
-      border-radius: 13px;
+      border-radius: 25px;
       // background: #f4f4f4;
       input {
         margin-left: 20rpx;
         flex: 1;
       }
     }
+		.avatar-style {
+			width: 40px;
+			height: 40px;
+			border-radius: 50px;
+		}
     .name_satus {
       border: 1px solid #ff0303;
     }
