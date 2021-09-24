@@ -2,8 +2,10 @@ import Request from 'luch-request'
 // import store from '@/store/index'
 
 // const BASE_URL = ''
-const BASE_URL = '/ckapi'
+// const BASE_URL = '/ckapi'
 
+// app
+const BASE_URL = 'https://www.checkyyan.com'
 const http = new Request()
 
 /**
