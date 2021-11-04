@@ -1,1 +1,1 @@
-# up-ck
+# uni-app
